@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  backend:
+    build: 'serviceSTAN'
+    container_name: 'backend'
+    ports:
+       - '8080:8080'
+    depends_on:
+      - database
+    restart: on-failure:10
+  
+  database:
+    image: postgres:15.1
+    environment:
+      POSTGRES_DB: "wb_orders"
+      POSTGRES_USER: "maselof"
+      POSTGRES_PASSWORD: "maselof"
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/db_init.sql
+    restart: always
+    expose:
+      - '5432'

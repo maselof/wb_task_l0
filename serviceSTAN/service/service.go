@@ -14,9 +14,10 @@ import (
 
 func RunService() {
 	//CONNECT TO DATABASE
+
+	log.Println("TRY CONNECT TO DATABASE")
 	pl := database.ConnectToDB()
 	defer pl.Close()
-	log.Println("CONNECT TO DATABASE")
 
 	//START STAN SERVER
 	s, err := server.RunServer("mystreamingserver")

@@ -15,7 +15,7 @@ const (
 )
 
 func ConnectToDB() *sql.DB {
-	connStr := fmt.Sprintf("postgres://%s:%s@localhost/%s?sslmode=disable", user, password, nameDB)
+	connStr := fmt.Sprintf("postgres://%s:%s@database:5432/%s?sslmode=disable", user, password, nameDB)
 	pl, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
