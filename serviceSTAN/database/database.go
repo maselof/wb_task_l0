@@ -9,13 +9,13 @@ import (
 )
 
 const (
-	user     = "postgres"
-	password = "postgres"
+	user     = "maselof"
+	password = "maselof"
 	nameDB   = "wb_orders"
 )
 
 func ConnectToDB() *sql.DB {
-	connStr := fmt.Sprintf("postgres://%s:%s@localhost/%s?sslmode=disable", user, password, nameDB)
+	connStr := fmt.Sprintf("postgres://%s:%s@database:5432/%s?sslmode=disable", user, password, nameDB)
 	pl, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
