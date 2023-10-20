@@ -7,5 +7,17 @@
     <form method="post" action="order">
         <input type="text" title="orderId" name="orderId">
         <button title="btnSearch" value="Найти заказ">Найти заказ</button>
+        <p>Номер заказа: {{ .OrderId }}</p>
+        <p>Сервис доставки: {{ .DeliveryService }}</p>
+        <p>Дата: {{ .DateCreated }}</p>
+        <p>Имя доставщика: {{ .DeliveryId.NameDelivery }}</p>
+        <p>Телефон доставщика: {{ .DeliveryId.NameDelivery }}</p>
+        <ul>
+            {{ range .Items }}
+                <p>Имя товара: {{ .NameItem }}</p>
+                <p>Цена: {{ .Price }}</p>
+                <p>Бренд: {{ .Brand }}</p>
+            {{ end }}
+        </ul>
     </form>
 </body>

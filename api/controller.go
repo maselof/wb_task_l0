@@ -30,9 +30,14 @@ func sendDataHandler(w http.ResponseWriter, r *http.Request) {
 	orderId := r.FormValue("orderId")
 
 	order := sub.Subscribe(orderId)
-	fmt.Fprintf(w, "orderID: %s DateCreated: %s DeliveryService: %s \n", order.OrderId, order.DateCreated, order.DeliveryService)
+	/*fmt.Fprintf(w, "orderID: %s DateCreated: %s DeliveryService: %s \n", order.OrderId, order.DateCreated, order.DeliveryService)
 	fmt.Fprintf(w, "NameDelivery: %s Phone: %s \n", order.DeliveryId.NameDelivery, order.DeliveryId.Phone)
 	for i := 0; i < len(order.Items); i++ {
 		fmt.Fprintf(w, "Name: %s Price: %d Brand: %s \n", order.Items[i].NameItem, order.Items[i].Price, order.Items[i].Brand)
+	}*/
+	tml, err := template.ParseFiles("templates/main.html")
+	if err != nil {
+		log.Fatal(err)
 	}
+	tml.Execute(w, order)
 }
