@@ -38,7 +38,7 @@ func (s *Subscriber) Subscribe(nameChannel string) models.Orders {
 	if err != nil {
 		log.Fatal(err)
 	}
-	time.Sleep(time.Second * 3) // waiting for a message from the channel
+	time.Sleep(time.Second) // waiting for a message from the channel
 	defer sub.Unsubscribe()
 	return order
 }

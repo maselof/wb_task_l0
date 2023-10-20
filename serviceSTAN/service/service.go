@@ -38,7 +38,7 @@ func RunService() {
 	//PUBLISHED DATA FROM DATABASE TO CACHE STAN
 	publisher := streaming.NewPublisher(&sc)
 	publisher.WriteToSTANCache(pl)
-	time.Sleep(time.Second * 3)
+	time.Sleep(time.Second * 2)
 
 	api.StartApi()
 }
