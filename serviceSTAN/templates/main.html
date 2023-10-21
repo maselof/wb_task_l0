@@ -10,8 +10,8 @@
         <p>Номер заказа: {{ .OrderId }}</p>
         <p>Сервис доставки: {{ .DeliveryService }}</p>
         <p>Дата: {{ .DateCreated }}</p>
-        <p>Имя доставщика: {{ .DeliveryId.NameDelivery }}</p>
-        <p>Телефон доставщика: {{ .DeliveryId.NameDelivery }}</p>
+        <p>Имя курьера: {{ .DeliveryId.NameDelivery }}</p>
+        <p>Телефон курьера: {{ .DeliveryId.Phone }}</p>
         <ul>
             {{ range .Items }}
                 <p>Имя товара: {{ .NameItem }}</p>
