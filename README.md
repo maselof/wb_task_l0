@@ -7,7 +7,8 @@
 В логах вы увидите ID заказов, которые доступны in memory на STAN сервер  
 Вот пример вывода информации о заказе: 
 
-![image](https://github.com/maselof/wb_task_l0/assets/100023884/f8ade57a-c0ed-415e-8203-d19857161805)
+![image](https://github.com/maselof/wb_task_l0/assets/100023884/40fad052-d55e-4850-bab0-cec6fc028269)
+
 
 Данные теста WRK:  
 
